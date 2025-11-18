@@ -1,0 +1,25 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ # 본인의 데베주소
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+jwt:
+  secret: YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo1NDMyMTBhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5eg==  # openssl rand -base64 64
+  access-token-validity-in-milliseconds: 3600000  # 1시간
+
+kakao:
+  client-id:
+  client-secret: # 카카오는 secret을 사용하지 않음 (공란 가능)
+  redirect-uri: http://localhost:8080/login/oauth2/code/kakao
+  token-url: https://kauth.kakao.com/oauth/token
+  user-info-url: https://kapi.kakao.com/v2/user/me
+
+token:
+  expire:
+    time: 1800000  # JWT 토큰 유효시간 (30분)
